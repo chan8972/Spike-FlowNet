@@ -3,7 +3,7 @@
 
 ![Predicted flow.](pic.png)  
 
-This repository contains the code associated with [Spike-FlowNet: Event-based Optical Flow Estimation with Energy-Efficient Hybrid Neural Networks](https://arxiv.org/abs/2003.06696). This code has most recently been tested with Python 3.7 and Pytorch 1.1.0.
+This repository contains the source code associated with [Spike-FlowNet: Event-based Optical Flow Estimation with Energy-Efficient Hybrid Neural Networks, ECCV 2020](https://link.springer.com/chapter/10.1007/978-3-030-58526-6_22). This code has most recently been tested with Python 3.7 and Pytorch 1.1.0.
 
 
 ## Introduction
@@ -77,7 +77,20 @@ Other available command line arguments for hyperparameter tuning can be found in
 ## Citations
 
 If you find this code useful in your research, please consider citing:
+[Lee C., Kosta A.K., Zhu A.Z., Chaney K., Daniilidis K., Roy K. "Spike-FlowNet: Event-Based Optical Flow Estimation with Energy-Efficient Hybrid Neural Networks.", In Proceedings of the European Conference on Computer Vision (ECCV) 2020](https://link.springer.com/chapter/10.1007/978-3-030-58526-6_22)
 
+```
+@inproceedings{lee2020spike,
+  title={Spike-flownet: event-based optical flow estimation with energy-efficient hybrid neural networks},
+  author={Lee, Chankyu and Kosta, Adarsh Kumar and Zhu, Alex Zihao and Chaney, Kenneth and Daniilidis, Kostas and Roy, Kaushik},
+  booktitle={European Conference on Computer Vision},
+  pages={366--382},
+  year={2020},
+  organization={Springer}
+}
+```
+
+An arXiv version is also available: 
 [Chankyu Lee, Adarsh Kumar Kosta, Alex Zihao Zhu, Kenneth Chaney, Kostas Daniilidis and Kaushik Roy, "Spike-FlowNet: Event-based Optical Flow Estimation with Energy-Efficient Hybrid Neural Networks", arXiv preprint, 2020](https://arxiv.org/abs/2003.06696)
 
 ```
@@ -88,7 +101,6 @@ If you find this code useful in your research, please consider citing:
   year={2020}
 }
 ```
-
 
 ## Authors
 

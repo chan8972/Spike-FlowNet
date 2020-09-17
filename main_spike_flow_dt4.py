@@ -210,10 +210,10 @@ class Test_loading(Dataset):
 
     def __getitem__(self, index):
         if (index + 20 < self.length) and (index > 20):
-            aa = np.zeros((256, 256, int(self.dt*self.split/2)))
-            bb = np.zeros((256, 256, int(self.dt*self.split/2)))
-            cc = np.zeros((256, 256, int(self.dt*self.split/2)))
-            dd = np.zeros((256, 256, int(self.dt*self.split/2)))
+            aa = np.zeros((256, 256, int(self.dt*self.split/2)), dtype=np.uint8)
+            bb = np.zeros((256, 256, int(self.dt*self.split/2)), dtype=np.uint8)
+            cc = np.zeros((256, 256, int(self.dt*self.split/2)), dtype=np.uint8)
+            dd = np.zeros((256, 256, int(self.dt*self.split/2)), dtype=np.uint8)
 
             for k in range(int(self.dt/2)):
                 im_on = np.load(testdir + '/count_data/' + str(int(index+k+1))+'.npy')
@@ -412,7 +412,7 @@ def validate(test_loader, model, epoch, output_writers):
 
             gt_flow = gt_flow[yoff:-yoff, xoff:-xoff, :]
 
-            AEE, percent_AEE, n_points, AEE_sum_temp, AEE_gt, AEE_sum_temp_gt = flow_error_dense(gt_flow, pred_flow, (torch.sum(torch.sum(torch.sum(input_representation, dim=0), dim=0), dim=2)).cpu())
+            AEE, percent_AEE, n_points, AEE_sum_temp, AEE_gt, AEE_sum_temp_gt = flow_error_dense(gt_flow, pred_flow, (torch.sum(torch.sum(torch.sum(input_representation, dim=0), dim=0), dim=2)).cpu(), is_car=False)
 
             AEE_sum = AEE_sum + args.div_flow * AEE
             AEE_sum_sum = AEE_sum_sum + AEE_sum_temp

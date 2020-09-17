@@ -104,13 +104,17 @@ def smooth_loss(pred_map):
 """
 Calculates per pixel flow error between flow_pred and flow_gt. event_img is used to mask out any pixels without events
 """
-def flow_error_dense(flow_gt, flow_pred, event_img):
+def flow_error_dense(flow_gt, flow_pred, event_img, is_car=False):
+    max_row = flow_gt.shape[1]
+    if is_car == True:
+        max_row = 190
+
     flow_pred = np.array(flow_pred)
     event_img = np.array(event_img)
 
-    event_img_cropped = np.squeeze(event_img)
-    flow_gt_cropped = flow_gt
-    flow_pred_cropped = flow_pred
+    event_img_cropped = np.squeeze(event_img)[:max_row, :]
+    flow_gt_cropped = flow_gt[:max_row, :]
+    flow_pred_cropped = flow_pred[:max_row, :]
 
     event_mask = event_img_cropped > 0
 
